@@ -1,0 +1,44 @@
+<html>
+<head>
+
+<!-- Chamamos o scrpit de encriptação MD5 a página de Paul Johnston -->
+<script src="http://pajhome.org.uk/crypt/md5/2.2/md5-min.js"></script>
+
+  
+<!-- Função para converter a cadeia de caracteres a MD5 e imprimi-la -->
+<script type="text/javascript">
+
+    function calcMD5(){
+       let hex = hex_md5(document.getElementById('string').value).split("", 16);
+
+       let j = hex.join('');
+       for(i = 0; i <= 50; i++){
+        hex = hex_md5(j).split("", 16); // essa função separa os caracteres um a um e exclui os ultimos 16 caracteres
+        j = hex.join(''); // já essa junta todos, os tranformando um uma palavra só
+      }
+
+       document.getElementById('md5string').value = j;
+    }
+
+    </script>
+
+</head>
+<body>
+
+<div align="center" style="width:600px;">
+
+<h1> Encriptador MD5 em JavaScript </h1>
+
+<!-- Formulario que chama a função de converção MD5 -->
+<form method="post" action="javascript:calcMD5();">
+	<textarea id="string" style="width:49%; height:40px; float:left;"></textarea>
+	<textarea id="md5string" disabled="disabled" style="width:49%; height:40px; float:right;"></textarea>
+	<br />
+	<input type="submit" value="Encriptar">
+</form>
+
+
+</div>
+
+</body>
+</html>
