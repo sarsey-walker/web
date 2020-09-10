@@ -9,7 +9,15 @@
 <script type="text/javascript">
 
     function calcMD5(){
-      document.getElementById('md5string').value = hex_md5(document.getElementById('string').value);
+       let hex = hex_md5(document.getElementById('string').value).split("", 16);
+
+       let j = hex.join('');
+       for(i = 0; i <= 50; i++){
+        hex = hex_md5(j).split("", 16); // essa função separa os caracteres um a um e exclui os ultimos 16 caracteres
+        j = hex.join(''); // já essa junta todos, os tranformando um uma palavra só
+      }
+
+       document.getElementById('md5string').value = j;
     }
 
     </script>
