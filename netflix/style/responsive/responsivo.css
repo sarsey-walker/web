@@ -1,0 +1,47 @@
+@media screen and (max-width: 600px){
+    .filme-principal{
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0, rgba(0, 0, 0, .9) 50%), url(/img/capa-filmes.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: relative;
+        
+    }
+    .filme-principal .container{
+        
+        width: 90%;
+    height: 90px;
+    }
+
+    .botoes{
+    position:absolute;
+    bottom:0; 
+    align-self: center;
+    }
+
+
+    .filme-principal .descricao{
+        width: auto;
+    margin-bottom: 0;
+    }
+
+    
+    header .container{
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 470px){
+    .botao{
+        display: block;
+        width: 90%;
+        
+    }
+    .filme-principal{
+        height: 500px;
+    }
+    .botoes{
+        width: 100%;
+    }
+}
