@@ -23,3 +23,21 @@ const icon = L.icon({
 
 //criate and add marker
 L.marker([-19.8998366,-43.9991507], { icon }).addTo(mymap);
+
+/*image gallery*/
+
+function selectImage(event){
+    const button = event.currentTarget;
+
+    // remover .active
+    const buttons = document.querySelectorAll(".images button");
+    buttons.forEach((button) => {button.classList.remove("active")});
+    //selecionar imagem selecionada
+    const image = button.children[0];
+    const imageContainer = document.querySelector(".orphanage-details > img");
+    //atualizar conrainer de imagem
+
+    imageContainer.src = image.src;
+    //adcionar classe .active para esse votao
+    button.classList.add('active');
+}
